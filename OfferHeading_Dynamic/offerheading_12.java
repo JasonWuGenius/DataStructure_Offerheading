@@ -1,5 +1,7 @@
 package OfferHeading_Dynamic;
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MoveAction;
+
 public class offerheading_12 {
 /*
 	Ã‚ƒø√Ë ˆ
@@ -12,12 +14,12 @@ public class offerheading_12 {
 
 */
 	
-	public int movingCount(int threshold, int rows, int cols)
+	public static int movingCount(int threshold, int rows, int cols)
     {
         boolean[] visited = new boolean[rows*cols];
         return movingCountCore(threshold, rows, cols, 0, 0, visited);
     }
-    private int movingCountCore(int threshold, int rows, int cols, int row, int col, boolean[] visited){
+    private static int movingCountCore(int threshold, int rows, int cols, int row, int col, boolean[] visited){
         if(row<0 || row>=rows || col<0 || col>=cols){
             return 0;
         }
@@ -31,7 +33,7 @@ public class offerheading_12 {
                 +movingCountCore(threshold, rows, cols, row-1, col, visited)
                 +movingCountCore(threshold, rows, cols, row+1, col, visited);
     }
-    private boolean checkSum(int threshold, int row, int col){
+    private static boolean checkSum(int threshold, int row, int col){
         int sum=0;
         while(row!=0){
             sum+=row%10;
@@ -46,5 +48,11 @@ public class offerheading_12 {
         }
         return true;
     }
+    public static void main(String[] args) {
+		int threshold = 18;
+		int rows = 9;
+		int cols = 9;
+		System.out.println(movingCount(threshold, rows, cols));
+	}
 
 }
