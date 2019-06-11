@@ -34,7 +34,7 @@ public class TreeSerialize {
 		if(str == null || str.length() == 0){
 			return null;
 		}
-		if(index > str.length()){
+		if(index >= str.length()){
 			return null;
 		}
 		TreeNode node = null;
