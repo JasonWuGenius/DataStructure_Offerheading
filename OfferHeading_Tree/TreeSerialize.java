@@ -1,6 +1,6 @@
 package OfferHeading_Tree;
 
-public class offerheading_37 {
+public class TreeSerialize {
 	/*
 	 * 序列化二叉树
 	 * 
@@ -17,7 +17,7 @@ public class offerheading_37 {
 		以便于截取字符串中当前的结点值。（详见代码）
 	 */
 	public static String serialize(TreeNode node){
-		StringBuilder sb = new StringBuilder();
+		StringBuffer sb = new StringBuffer();
 		if(node == null){
 			sb.append("$,");
 		}
@@ -34,12 +34,13 @@ public class offerheading_37 {
 		if(str == null || str.length() == 0){
 			return null;
 		}
-		if(index>str.length())
+		if(index > str.length()){
 			return null;
+		}
 		TreeNode node = null;
-		String[] newStr = str.split(",");
-		if(!newStr[index].equals("$")){
-			node = new TreeNode(Integer.valueOf(newStr[index]));
+		String[] newstr = str.split(",");
+		if(!newstr[index].equals("$")){
+			node = new TreeNode(Integer.valueOf(newstr[index]));
 			node.left = deserialize(str);
 			node.right = deserialize(str);
 		}

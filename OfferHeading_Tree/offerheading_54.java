@@ -8,7 +8,8 @@ public class offerheading_54 {
 	　　给定一棵二叉搜索树，请找出其中的第k小的结点。
 		回到顶部
 	        思路
-		设置全局变量index=0，对BST进行中序遍历，每遍历一个结点，index+1，当index=k时，该结点即为所求结点。
+		设置全局变量index=0，对BST进行中序遍历，每遍历一个结点，
+		index+1，当index=k时，该结点即为所求结点。
 	 */
 //	public class TreeNode{
 //		int val=0;
@@ -32,15 +33,22 @@ public class offerheading_54 {
 		TreeNode kthNode = null;
 		if(root.left!=null){
 			kthNode = getKthNode(root.left, k);
+			if(kthNode != null){
+				System.out.println("kthNode--1:"+kthNode.val);
+			}
 		}
 		if(kthNode==null){
 			index++;
+			System.out.println("index:"+index);
 			if(k==index){
 				kthNode = root;
 			}
 		}
 		if(kthNode==null && root.right!=null){
 			kthNode = getKthNode(root.right, k);
+			if(kthNode != null){
+				System.out.println("kthNode--3:"+kthNode.val);
+			}
 		}
 		return kthNode;
 	}
