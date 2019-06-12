@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class PrintTree {
+public class TreeLevelPrint {
 	/*
 	 * 从上到下打印树，即树的层次遍历
 	 * 
