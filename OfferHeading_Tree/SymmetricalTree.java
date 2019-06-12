@@ -1,6 +1,6 @@
 package OfferHeading_Tree;
 
-public class offerheading_28 {
+public class SymmetricalTree {
 	/*
 	 * ¶Ô³ÆµÄ¶þ²æÊ÷
 	 * 
