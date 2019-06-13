@@ -2,12 +2,12 @@ package OfferHeading_Tree;
 
 public class offerheading_27 {
 	/*
-	 * ¶þ²æÊ÷µÄ¾µÏñ
+	 * äºŒå‰æ ‘çš„é•œåƒ
 	 * 
-	 * ÌâÄ¿¡¡
-¡¡¡¡		ÇëÍê³ÉÒ»¸öº¯Êý£¬ÊäÈëÒ»¸ö¶þ²æÊ÷£¬¸Ãº¯ÊýÊä³öËüµÄ¾µÏñ¡£
-	        Ë¼Â·
-		»­Í¼¿ÉÒÔºÜÇåÎúµØµÃµ½Ë¼Â·£ºÏÈÇ°Ðò±éÀú£¬¶ÔÃ¿¸ö½áµã½»»»×óÓÒ×Ó½áµã¡£
+	 * é¢˜ç›®ã€€
+ã€€ã€€		è¯·å®Œæˆä¸€ä¸ªå‡½æ•°ï¼Œè¾“å…¥ä¸€ä¸ªäºŒå‰æ ‘ï¼Œè¯¥å‡½æ•°è¾“å‡ºå®ƒçš„é•œåƒã€‚
+	        æ€è·¯
+		ç”»å›¾å¯ä»¥å¾ˆæ¸…æ™°åœ°å¾—åˆ°æ€è·¯ï¼šå…ˆå‰åºéåŽ†ï¼Œå¯¹æ¯ä¸ªç»“ç‚¹äº¤æ¢å·¦å³å­ç»“ç‚¹ã€‚
 	 */
 	public static void Mirror(TreeNode root){
 		if(root == null){
