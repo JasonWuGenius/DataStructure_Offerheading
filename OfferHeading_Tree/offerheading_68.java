@@ -72,7 +72,7 @@ public class offerheading_68 {
 		node7.left = node12;
 		
 		System.out.println("The Tree:");
-		System.out.println(PrintTree.levelOrder(node1));
+		System.out.println(TreeLevelPrint.levelOrder(node1));
 //		System.out.println("The Lowest Common Parent:"+getLowestCommonParentBST(node1, node8, node9).val);
 		System.out.println("The Lowest Common Parent:"+getLowestCommonParent(node1, node10, node11).val);
 	}

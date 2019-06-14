@@ -9,22 +9,21 @@ public class deleteDuplicateNode {
 		返回链表头指针。 例如，链表1->2->3->3->4->4->5 处理后为 1->2->5
 	 */
 	public static ListNode deleteDuplication(ListNode pHead){
-		ListNode result;
-		ListNode temp = pHead;
-		ListNode index = new ListNode(1);
+		ListNode index = new ListNode(-1);
 		index.next = pHead;
-		result = index;
+		ListNode temp = pHead;
+		ListNode result = index;
 		while(temp != null){
-			if(temp.next!=null && temp.next.val==temp.val){
-				while(temp.next!=null && temp.next.val==temp.val){
-					temp=temp.next;
+			if(temp.next != null && temp.val == temp.next.val){
+				while(temp.next!=null && temp.val==temp.next.val){
+					temp = temp.next;
 				}
-				temp=temp.next;
-				index.next=temp;
+				temp = temp.next;
+				index.next = temp;
 			}
 			else{
-				index=index.next;
-				temp=temp.next;
+				temp = temp.next;
+				index = index.next;
 			}
 		}
 		return result.next;
