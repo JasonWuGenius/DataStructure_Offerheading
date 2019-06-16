@@ -13,7 +13,7 @@ package OfferHeading_Array;
 
 import java.util.ArrayList;
 
-public class Solution {
+public class slideWindowMaximum {
     public ArrayList<Integer> maxInWindows(int [] nums, int size)
     {
         ArrayList<Integer> res = new ArrayList<>();

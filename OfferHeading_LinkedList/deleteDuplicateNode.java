@@ -10,20 +10,20 @@ public class deleteDuplicateNode {
 	 */
 	public static ListNode deleteDuplication(ListNode pHead){
 		ListNode index = new ListNode(-1);
+		ListNode result = index;
 		index.next = pHead;
 		ListNode temp = pHead;
-		ListNode result = index;
-		while(temp != null){
-			if(temp.next != null && temp.val == temp.next.val){
-				while(temp.next!=null && temp.val==temp.next.val){
+		while(temp!=null){
+			if(temp.next!=null && temp.next.val == temp.val){
+				while(temp.next!=null && temp.next.val==temp.val){
 					temp = temp.next;
 				}
 				temp = temp.next;
 				index.next = temp;
 			}
 			else{
-				temp = temp.next;
 				index = index.next;
+				temp = temp.next;
 			}
 		}
 		return result.next;
