@@ -28,7 +28,11 @@ public class FindDuplicateNumInArray {
 	}
 	public static void main(String[] args) {
 //		int[] arr = { 1, 2, 3, 2, 4 };
-		int[] arr = {2, 3, 1, 0, 2, 5, 3};
+		int[] arr = {2, 3, 1, 0, 1, 5, 3};
+		for(int item: arr){
+			System.out.print(item+" ");
+		}
+		System.out.println();
 		System.out.println("The Duplicate Number:"+getDuplicate(arr));
 	}
 }
