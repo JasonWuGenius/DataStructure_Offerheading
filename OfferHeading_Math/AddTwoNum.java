@@ -1,6 +1,6 @@
 package OfferHeading_Math;
 
-public class offerheading_65 {
+public class AddTwoNum {
 	/*
 	 * 不用加减乘除做加法
 	 * 
@@ -24,8 +24,8 @@ public class offerheading_65 {
 		return num1;
 	}
 	public static void main(String[] args) {
-		int num1 = 2;
-		int num2 = 3;
+		int num1 = 5;
+		int num2 = 4;
 		System.out.println("The num1:"+num1);
 		System.out.println("The num2:"+num2);
 		System.out.println("The Add of two nums:"+add(num1, num2));

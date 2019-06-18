@@ -13,7 +13,7 @@ import java.util.*;
 public class BuildMultiplyArray {
     public static int[] multiply(int[] A){
         int length = A.length;
-        int[] B = new int[length];
+        int[] B = new int[length];  
         if(length != 0){
             B[0] = 1;
             for(int i=1; i<length; i++){
