@@ -13,7 +13,7 @@ package OfferHeading_Array;
 
 import java.util.*;
 
-public class dataFlowMediean {
+public class DataFlowMediean {
     LinkedList<Integer> list = new LinkedList<>();
     public void Insert(Integer num) {
         if(list.size() == 0 || list == null){
