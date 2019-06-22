@@ -46,7 +46,7 @@ public class DataFlowMediean {
         return Double.valueOf(list.get(i));
     }
     public static void main(String[] args) {
-		dataFlowMediean df = new dataFlowMediean();
+		DataFlowMediean df = new DataFlowMediean();
 		df.Insert(2);
 //		df.Insert(5);
 //		df.Insert(4);

@@ -1,6 +1,6 @@
 package OfferHeading_Tree;
 
-public class binaryTreeNextNode {
+public class BinaryTreeNextNode {
 	/*
 		二叉树的下一个结点
 
@@ -16,6 +16,7 @@ public class binaryTreeNextNode {
 	
 		TreeLinkNode(int val) {
 			this.val = val;
+		}
 	}
 
 	public static TreeLinkNode getNext(TreeLinkNode node){
