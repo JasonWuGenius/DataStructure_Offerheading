@@ -2,11 +2,10 @@ package OfferHeading_Tree;
 
 public class IsBalancedSolution {
 	/*
-		二叉树的下一个结点
+	平衡二叉树
 
-		题目描述
-		给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。
-		注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。
+	题目描述
+	输入一棵二叉树，判断该二叉树是否是平衡二叉树。
 	 */
 
 	public static boolean IsBalanced(TreeNode root){
