@@ -21,7 +21,7 @@ public class ConvertSolution {
 		if(root == null){
 			return;
 		}
-		ConvertSub(root.left);
+		Convert(root.left);
 		if(head == null){
 			head = root;
 			realHead = root;

@@ -15,40 +15,41 @@ import java.util.*;
 
 public class PermutationSolution {
     public static ArrayList<String> Permutation(String str) {
-        ArrayList<String> res = new ArrayList<String>();
+        ArrayList<String> res= new ArrayList<>();
         if(str == null || str.length() == 0){
             return res;
         }
-        char[] chrs = str.toCharArray();
-        helper(res, 0, chrs);
+        char[] s = str.toCharArray();
+        helper(res, 0, s);
         Collections.sort(res);
         return res;
     }
 
-    public static void helper(ArrayList<String> res, int index, char[] s){
-        if(index == s.length-1){
-            res.add(new String(s));
-        }
-        for(int i=index; i<s.length; i++){
-            System.out.println("i: "+i);
-            if(i == index || s[index] != s[i]){
-                swap(s, index, i);
-                helper(res, index+1, s);
-                swap(s, index, i);
+    public static void helper(ArrayList<String> res, int i, char[] s){
+        if(i == s.length-1){
+            if(!res.contains(new String(s))){
+                res.add(new String(s));
             }
-            System.out.printf("%d :  %s \n", i, res);
+        }
+        else{
+            for(int j=i; j<s.length; j++){
+                swap(s, i, j);
+                helper(res, i+1, s);
+                swap(s, i, j);
+            }
         }
     }
 
     public static void swap(char[] t, int i, int j){
-        char c = t[i];
-        t[i] = t[j];
-        t[j] = c;
+        if(i != j){
+            char temp = t[i];
+            t[i] = t[j];
+            t[j] = temp;
+        }
     }
 
-
     public static void main(String[] args) {
-        String str = "abc";
+        String str = "abb";
         System.out.println("The String: "+str);
         System.out.println("The permutation list is : "+Permutation(str));
 	}
