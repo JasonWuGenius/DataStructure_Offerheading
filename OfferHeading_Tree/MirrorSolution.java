@@ -1,21 +1,32 @@
 package OfferHeading_Tree;
 
-public class offerheading_27 {
-	/*
-	 * 二叉树的镜像
-	 * 
-	 * 题目　
-　　		请完成一个函数，输入一个二叉树，该函数输出它的镜像。
-	        思路
-		画图可以很清晰地得到思路：先前序遍历，对每个结点交换左右子结点。
-	 */
+/*
+	??????
+
+	????
+	??????????????????????
+	????:
+	????????????? 
+				8
+			/  \
+			6   10
+			/ \  / \
+			5  7 9 11
+			?????
+				8
+			/  \
+			10   6
+			/ \  / \
+			11 9 7  5
+*/
+public class MirrorSolution {
 	public static void Mirror(TreeNode root){
 		if(root == null){
 			return;
 		}
-		TreeNode tempNode = root.left;
+		TreeNode temp = root.left;
 		root.left = root.right;
-		root.right = tempNode;
+		root.right = temp;
 		Mirror(root.left);
 		Mirror(root.right);
 	}
@@ -33,14 +44,14 @@ public class offerheading_27 {
 		node1.right = node3;
 		node2.left = node4;
 		node2.right = node5;
-//		node3.left = node6;
-//		node3.right = node7;
-//		node6.right = node8;
+		node3.left = node6;
+		node3.right = node7;
+		node6.right = node8;
 		
 		System.out.println("Before Mirror -- The levelorder:");
-		System.out.println(PrintTree.levelOrder(node1));
+		System.out.println(PrintFromTopToBottomSolution.PrintFromTopToBottom(node1));
 		Mirror(node1);
 		System.out.println("After Mirror -- The levelorder:");
-		System.out.println(PrintTree.levelOrder(node1));
+		System.out.println(PrintFromTopToBottomSolution.PrintFromTopToBottom(node1));
 	}
 }
