@@ -2,9 +2,9 @@ package OfferHeading_Tree;
 
 import OfferHeading.BinaryTreeNode;
 
-public class offerheading_39 {
+public class TreeDepthSolution {
 	/**
-	 * 求解二叉树的深度
+	 * 姹傝В浜屽弶鏍戠殑娣卞害
 	 */
 	public static int treeDepth(BinaryTreeNode root){
 		if(root == null){
@@ -32,7 +32,7 @@ public class offerheading_39 {
 		node3.right = node7;
 		node4.left = node8;
 		
-		System.out.println("二叉树的深度是："+treeDepth(node1));
+		System.out.println("浜屽弶鏍戠殑娣卞害鏄細"+treeDepth(node1));
 	}
 
 }
