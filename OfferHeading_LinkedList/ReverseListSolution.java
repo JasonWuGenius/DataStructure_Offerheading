@@ -1,18 +1,18 @@
 package OfferHeading_LinkedList;
 
-public class offerheading_24 {
-	/*
-	 * ·´×ªÁ´±í
-	 * 
-	 * ÌâÄ¿¡¡
-¡¡¡¡		¶¨ÒåÒ»¸öº¯Êı£¬ÊäÈëÒ»¸öÁ´±íµÄÍ·½áµã£¬·´×ª¸ÃÁ´±í²¢Êä³ö·´×ªºóÁ´±íµÄÍ·½áµã¡£
+/*
+ * åè½¬é“¾è¡¨
+ * 
+	é¢˜ç›®ã€€
+	å®šä¹‰ä¸€ä¸ªå‡½æ•°ï¼Œè¾“å…¥ä¸€ä¸ªé“¾è¡¨çš„å¤´ç»“ç‚¹ï¼Œåè½¬è¯¥é“¾è¡¨å¹¶è¾“å‡ºåè½¬åé“¾è¡¨çš„å¤´ç»“ç‚¹ã€‚
 
-		Ë¼Â·
-	¡¡¡¡·½·¨Ò»£ºÊ¹ÓÃÈı¸öÖ¸Õë£¨pre,p,next£©½øĞĞÊµÏÖ¡£ÁîpÖ¸Ïòpre£¬
-		nextÔòÊÇÓÃÓÚ·ÀÖ¹Á´±í¶ÏÁÑ£¨ºÜ¼òµ¥£¬Ïê¼û´úÂë£©¡£
-	¡¡¡¡·½·¨¶ş£¨µİ¹é£©£ºÕÒµ½×îºóÒ»¸ö½áµã×÷Îª·µ»ØÖµ£¬µİ¹éº¯ÊıÖĞ£¬
-		ÕÒµ½×îºóµÄÍ·½áµãºó£¬¿ªÊ¼½øĞĞÃ¿¸ö½áµãnextÖµµÄ×ª»»¡£¡¡
-	 */
+	æ€è·¯
+ã€€ã€€æ–¹æ³•ä¸€ï¼šä½¿ç”¨ä¸‰ä¸ªæŒ‡é’ˆï¼ˆpre,p,nextï¼‰è¿›è¡Œå®ç°ã€‚ä»¤pæŒ‡å‘preï¼Œ
+	nextåˆ™æ˜¯ç”¨äºé˜²æ­¢é“¾è¡¨æ–­è£‚ï¼ˆå¾ˆç®€å•ï¼Œè¯¦è§ä»£ç ï¼‰ã€‚
+ã€€ã€€æ–¹æ³•äºŒï¼ˆé€’å½’ï¼‰ï¼šæ‰¾åˆ°æœ€åä¸€ä¸ªç»“ç‚¹ä½œä¸ºè¿”å›å€¼ï¼Œé€’å½’å‡½æ•°ä¸­ï¼Œ
+	æ‰¾åˆ°æœ€åçš„å¤´ç»“ç‚¹åï¼Œå¼€å§‹è¿›è¡Œæ¯ä¸ªç»“ç‚¹nextå€¼çš„è½¬æ¢ã€‚ã€€
+ */
+public class ReverseListSolution {
 	public static ListNode reverseList1(ListNode head){
 		if(head == null || head.next == null)
 			return head;
@@ -28,7 +28,7 @@ public class offerheading_24 {
 		now.next = preNode;
 		return now;
 	}
-	//µü´ú·¨
+	//è¿­ä»£æ³•
 	public static ListNode reverseList2(ListNode head){
 		if(head == null || head.next == null)
 			return head;
@@ -41,6 +41,17 @@ public class offerheading_24 {
 			now = next;
 		}
 		return preNode;
+	}
+
+	public static ListNode reverseList3(ListNode head){
+		ListNode pre = null;
+		while(head != null){
+			ListNode next = head.next;
+			head.next = pre;
+			pre = head;
+			head = next;
+		}
+		return pre;
 	}
 	public static void main(String[] args) {
         ListNode ListNode1 = new ListNode(1);
@@ -55,7 +66,7 @@ public class offerheading_24 {
         
         System.out.println("The List:");
         PrintList.printFromHeadToTail(ListNode1);
-        ListNode newHead = reverseList1(ListNode1);
+        ListNode newHead = reverseList3(ListNode1);
         System.out.println("The reversed List:");
         PrintList.printFromHeadToTail(newHead);
 	}

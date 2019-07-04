@@ -1,27 +1,27 @@
-	package OfferHeading_LinkedList;
+package OfferHeading_LinkedList;
 
 import java.util.ArrayList;
 import java.util.Stack;
 
 import OfferHeading.ListNode;
+/*
+ *  从尾到头打印链表
+ * 
+ *  解决方案一：首先遍历链表的节点后打印，典型的“后进先出”，可以使用栈来实现这种顺序。
+	解决方案二：栈的本质就是递归，直接使用递归的方式，打印一个节点的时候先打印它后面的节点，
+		再打印该节点自身，实现反向打印
+	解决方案三：遍历链表，把链表中的元素复制到ArrayList中，然后逆序打印ArrayList中的元素，
+		由于ArrayList底层使用数组实现，所以用数组也是同样的原理
+	解决方案四：前三种解决方案本身属于在打印链表的时候不修改链表本身结构，
+		在允许修改链表结构的情况下可以把链表中的节点指针反转过来，改变链表方向，
+		然后重新遍历打印改变方向后的链表。
+ */
+//方案一：使用stack来打印链表
 
 public class offerheading_05_1 {
-	/*
-	 *  从尾到头打印链表
-	 * 
-	 *  解决方案一：首先遍历链表的节点后打印，典型的“后进先出”，可以使用栈来实现这种顺序。
-		解决方案二：栈的本质就是递归，直接使用递归的方式，打印一个节点的时候先打印它后面的节点，
-			再打印该节点自身，实现反向打印
-		解决方案三：遍历链表，把链表中的元素复制到ArrayList中，然后逆序打印ArrayList中的元素，
-			由于ArrayList底层使用数组实现，所以用数组也是同样的原理
-		解决方案四：前三种解决方案本身属于在打印链表的时候不修改链表本身结构，
-			在允许修改链表结构的情况下可以把链表中的节点指针反转过来，改变链表方向，
-			然后重新遍历打印改变方向后的链表。
-	 */
-	//方案一：使用stack来打印链表
 	public static void printListFromTailToHeadByStack(ListNode node){
 		Stack<Integer> stack = new Stack<Integer>();
-		while(node!=null){
+		while(node != null){
 			stack.push(node.val);
 			node = node.next;
 		}

@@ -1,20 +1,21 @@
 package OfferHeading_LinkedList;
 
-public class offerheading_25 {
-	/*
-	 * ºÏ²¢Á½¸öÅÅĞòµÄÁ´±í
-	 * 
-	 * ÌâÄ¿¡¡
-¡¡¡¡		ÊäÈëÁ½¸öµİÔöÅÅĞòµÄÁ´±í£¬ºÏ²¢ÕâÁ½¸öÁ´±í²¢Ê¹ĞÂÁ´±íÖĞµÄ½áµãÈÔÈ»ÊÇ°´ÕÕµİÔöÅÅĞòµÄ¡£
+/*
+ * åˆå¹¶ä¸¤ä¸ªæ’åºçš„é“¾è¡¨
+ * 
+ * é¢˜ç›®ã€€
+ã€€ã€€è¾“å…¥ä¸¤ä¸ªé€’å¢æ’åºçš„é“¾è¡¨ï¼Œåˆå¹¶è¿™ä¸¤ä¸ªé“¾è¡¨å¹¶ä½¿æ–°é“¾è¡¨ä¸­çš„ç»“ç‚¹ä»ç„¶æ˜¯æŒ‰ç…§é€’å¢æ’åºçš„ã€‚
 
-	        Ë¼Â·
-	¡¡¡¡µİ¹éÊµÏÖ£ººÏ²¢¹ı³ÌÖĞ£¬Ã¿´Î¶¼ÊÇ´ÓÁ½¸öÁ´±íÖĞÕÒ³ö½ÏĞ¡µÄÒ»¸öÀ´Á´½Ó£¬
-		Òò´Ë¿ÉÒÔ²ÉÓÃµİ¹éÀ´ÊµÏÖ£ºµ±ÈÎÒâÒ»¸öÁ´±íÎªnullÊ±£¬Ö±½ÓÁ´½ÓÁíÒ»¸öÁ´±í¼´¿É£»
-		ÆäÓàÇé¿öÖ»ĞèÒªÔÚÁ½¸öÁ´±íÖĞÕÒ³ö½ÏĞ¡µÄÒ»¸ö½áµã½øĞĞÁ´½Ó£¬¸Ã½áµãµÄnextÖµ¼ÌĞøÍ¨¹ıµİ¹éº¯ÊıÀ´Á´½Ó¡£
-	¡¡¡¡·Çµİ¹éÊµÏÖ£º·Çµİ¹éÊµÏÖ±È½ÏÈİÒ×Ïëµ½£¬Ö±½Ó½øĞĞ·ÖÇé¿öÌÖÂÛ¼´¿É£¬
-		×¢ÒâÏÂºóÃæ´úÂëÖĞÍ·½áµãµÄ¸³Öµ¹ı³Ì¡£
-	 */
-	//µİ¹é--µİ¹éĞèÒªºÃºÃÀí½â
+	æ€è·¯
+ã€€ã€€é€’å½’å®ç°ï¼šåˆå¹¶è¿‡ç¨‹ä¸­ï¼Œæ¯æ¬¡éƒ½æ˜¯ä»ä¸¤ä¸ªé“¾è¡¨ä¸­æ‰¾å‡ºè¾ƒå°çš„ä¸€ä¸ªæ¥é“¾æ¥ï¼Œ
+	å› æ­¤å¯ä»¥é‡‡ç”¨é€’å½’æ¥å®ç°ï¼šå½“ä»»æ„ä¸€ä¸ªé“¾è¡¨ä¸ºnullæ—¶ï¼Œç›´æ¥é“¾æ¥å¦ä¸€ä¸ªé“¾è¡¨å³å¯ï¼›
+	å…¶ä½™æƒ…å†µåªéœ€è¦åœ¨ä¸¤ä¸ªé“¾è¡¨ä¸­æ‰¾å‡ºè¾ƒå°çš„ä¸€ä¸ªç»“ç‚¹è¿›è¡Œé“¾æ¥ï¼Œè¯¥ç»“ç‚¹çš„nextå€¼ç»§ç»­é€šè¿‡é€’å½’å‡½æ•°æ¥é“¾æ¥ã€‚
+
+ã€€ã€€éé€’å½’å®ç°ï¼šéé€’å½’å®ç°æ¯”è¾ƒå®¹æ˜“æƒ³åˆ°ï¼Œç›´æ¥è¿›è¡Œåˆ†æƒ…å†µè®¨è®ºå³å¯ï¼Œ
+	æ³¨æ„ä¸‹åé¢ä»£ç ä¸­å¤´ç»“ç‚¹çš„èµ‹å€¼è¿‡ç¨‹ã€‚
+ */
+public class MergeSolution {
+	//é€’å½’--é€’å½’éœ€è¦å¥½å¥½ç†è§£
 	public static ListNode merge1(ListNode node1, ListNode node2){
 		if(node1 == null)
 			return node2;
@@ -29,12 +30,14 @@ public class offerheading_25 {
 			return node2;
 		}
 	}
-	//·Çµİ¹é
+	//éé€’å½’
 	public static ListNode merge2(ListNode node1, ListNode node2){
-		if(node1 == null)
+		if(node1 == null){
 			return node2;
-		if(node2 == null)
+		}
+		if(node2 == null){
 			return node1;
+		}
 		ListNode pre = new ListNode(-1);
 		ListNode head = pre;
 		while(node1 != null && node2 != null){
@@ -78,7 +81,7 @@ public class offerheading_25 {
         PrintList.printFromHeadToTail(node1);
         System.out.println("The List2:");
         PrintList.printFromHeadToTail(node2);
-        ListNode newHead = merge1(node1, node2);
+        ListNode newHead = merge2(node1, node2);
         System.out.println("The Merge List:");
         PrintList.printFromHeadToTail(newHead);
 	}
