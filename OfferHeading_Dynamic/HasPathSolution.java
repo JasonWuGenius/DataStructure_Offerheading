@@ -1,5 +1,7 @@
 package OfferHeading_Dynamic;
 
+import java.awt.print.Book;
+
 /*
 	矩阵中的路径
 
@@ -12,12 +14,12 @@ package OfferHeading_Dynamic;
     因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子。
 */
 public class HasPathSolution {
-    public boolean HasPath(char[] matrix, int rows, int cols, char[] str){
-        if(matrix.length == 0 || matrix == null || matrix.length != rows*cols || rows*cols < str.length){
+    public static boolean HasPath(char[] matrix, int rows, int cols, char[] str){
+        if(matrix == null || matrix.length == 0 || matrix.length != rows*cols || matrix.length < str.length){
             return false;
         }
-        int pathLength = 0;
         boolean[] visited = new boolean[rows*cols];
+        int pathLength = 0;
         for(int i=0; i<rows; i++){
             for(int j=0; j<cols; j++){
                 if(hasPathCore(matrix, rows, cols, i, j, str, visited, pathLength)){
@@ -27,24 +29,40 @@ public class HasPathSolution {
         }
         return false;
     }
-    public boolean hasPathCore(char[] matrix, int rows, int cols, int row, int col, char[] str, boolean[] visited, int pathLength){
+    public static boolean hasPathCore(char[] matrix, int rows, int cols, int row, int col, char[] str, boolean[] visited, int pathLength){
         boolean flag = false;
-        if(row>=0 && row<rows && col>=0 && col<cols && !visited[row*cols*col] && matrix[row*cols+col] == str[pathLength]){
+        if(row>=0 && row<rows & col>=0 && col<cols && !visited[row*cols+col] && str[pathLength] == matrix[row*cols+col]){
             pathLength++;
-            visited[row*cols+col] = true;
             if(pathLength == str.length){
                 return true;
             }
-            flag = hasPathCore(matrix, rows, cols, row+1, col, str, visited, pathLength) ||
-            hasPathCore(matrix, rows, cols, row-1, col, str, visited, pathLength) ||
-            hasPathCore(matrix, rows, cols, row, col+1, str, visited, pathLength) ||
-            hasPathCore(matrix, rows, cols, row, col-1, str, visited, pathLength);
+            visited[row*cols+col] = true;
+
+            flag = hasPathCore(matrix, rows, cols, row+1, col, str, visited, pathLength) || 
+                            hasPathCore(matrix, rows, cols, row-1, col, str, visited, pathLength) || 
+                            hasPathCore(matrix, rows, cols, row, col+1, str, visited, pathLength) || 
+                            hasPathCore(matrix, rows, cols, row, col-1, str, visited, pathLength); 
+            
             if(!flag){
-                visited[row*cols+col] = false;
+                visited[row*cols+row] = false;
                 pathLength--;
             }
         }
         return flag;
+    }
+
+    public static void main(String[] args) {
+        char[] matrix = {'a', 'b', 'c', 'e', 's', 'f', 'c', 's', 'a', 'd', 'e', 'e'};
+        char[] str = {'b', 'c' ,'c' ,'e' ,'d'};
+        for(char item: matrix){
+            System.out.print(item+" ");
+        }
+        System.out.println();
+        for(char item: str){
+            System.out.print(item+" ");
+        }
+        System.out.println("\nThe matrix contains the str: "+HasPath(matrix, 3, 4, str));
+
     }
 }
 
